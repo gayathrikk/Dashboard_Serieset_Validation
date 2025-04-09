@@ -24,14 +24,14 @@ public class Dashboard_Serieset_Validation {
 
 	@Test(priority = 1)
 	public void Login() throws InterruptedException {
-		driver.get("http://apollo2.humanbrain.in");
+		driver.get("https://apollo2.humanbrain.in");
 		driver.manage().window().maximize();
 		System.out.println("The server is Opened sucessfully");
-		WebDriverWait wait = new WebDriverWait(driver, 50);
-		WebElement viewerSectionLink = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@src='/viewer/assets/images/colorsvg/gallery.svg']")));
-		viewerSectionLink.click();
-		System.out.println("The Viewer Icon is clicked");
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		// WebElement viewerSectionLink = wait
+		// 		.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@src='/viewer/assets/images/colorsvg/gallery.svg']")));
+		// viewerSectionLink.click();
+		// System.out.println("The Viewer Icon is clicked");
 		String parentWindow = driver.getWindowHandle();
 		WebDriverWait wait1 = new WebDriverWait(driver, 20);
 		WebElement login = wait1
