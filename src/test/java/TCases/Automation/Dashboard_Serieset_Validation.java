@@ -97,7 +97,7 @@ public class Dashboard_Serieset_Validation {
 		}
 		try {
 			WebDriverWait wait7 = new WebDriverWait(driver, 30);
-			WebElement Brainame = wait7.until(ExpectedConditions.elementToBeClickable(By.xpath("//td[text()='Fetal brain 15']")));
+			WebElement Brainame = wait7.until(ExpectedConditions.elementToBeClickable(By.xpath("//td[text()='FB15']")));
 			Brainame.click();			
 			Thread.sleep(3000);
 			System.out.println("--------------------------*****************-----------------------");
