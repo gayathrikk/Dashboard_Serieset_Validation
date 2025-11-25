@@ -32,20 +32,20 @@ public class Dashboard_Serieset_Validation {
 		// 		.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@src='/viewer/assets/images/colorsvg/gallery.svg']")));
 		// viewerSectionLink.click();
 		// System.out.println("The Viewer Icon is clicked");
-		String parentWindow = driver.getWindowHandle();
+		//String parentWindow = driver.getWindowHandle();
 		WebDriverWait wait1 = new WebDriverWait(driver, 20);
 		WebElement login = wait1
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=' Log In ']")));
+				.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='auth-button']")));
 		login.click();
 		System.out.println("The login Button is clicked");
 		Thread.sleep(4000);
-		Set<String> allWindows = driver.getWindowHandles();
-		for (String window : allWindows) {
-			if (!window.equals(parentWindow)) {
-				driver.switchTo().window(window);
-				break;
-			}
-		}
+		// Set<String> allWindows = driver.getWindowHandles();
+		// for (String window : allWindows) {
+		// 	if (!window.equals(parentWindow)) {
+		// 		driver.switchTo().window(window);
+		// 		break;
+		// 	}
+		// }
 		Thread.sleep(4000);
 		WebDriverWait wait2 = new WebDriverWait(driver, 20);
 		WebElement emailInput = wait2
@@ -65,14 +65,18 @@ public class Dashboard_Serieset_Validation {
 		WebElement Next2 = wait5.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Next']")));
 		Next2.click();
 		System.out.println("The Next Button is clicked");
+		WebDriverWait wait6 = new WebDriverWait(driver, 20);
+		WebElement continuebutton = wait6.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Continue']")));
+		continuebutton.click();
+		
 		Thread.sleep(5000);
-		driver.switchTo().window(parentWindow);
+		//driver.switchTo().window(parentWindow);
 		Thread.sleep(5000);
 	}
 	
 	@Test(priority = 2)
 	public void table() throws InterruptedException {
-		String parentWindow = driver.getWindowHandle();
+		//String parentWindow = driver.getWindowHandle();
 		try {
 			WebDriverWait wait6 = new WebDriverWait(driver, 30);
 			WebElement Atlas = wait6.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@src='/viewer/assets/images/colorsvg/cellreports.svg']")));
@@ -106,12 +110,12 @@ public class Dashboard_Serieset_Validation {
 			System.out.println("--------------------------*****************-----------------------");
 			System.out.println("The Brain Name Fetal Brain 15 is not Click");
 		}
-		Set<String> allWindows = driver.getWindowHandles();
-        for (String window : allWindows) {
-            if (!window.equals(parentWindow)) {
-                driver.switchTo().window(window);
-                break;
-            }}
+		// Set<String> allWindows = driver.getWindowHandles();
+  //       for (String window : allWindows) {
+  //           if (!window.equals(parentWindow)) {
+  //               driver.switchTo().window(window);
+  //               break;
+  //           }}
         try {
 			WebDriverWait wait = new WebDriverWait(driver, 30);
 			WebElement Brainame = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[text()='1672'])[1]")));
@@ -144,4 +148,5 @@ public class Dashboard_Serieset_Validation {
 							driver.quit();
 						}
 					}}
+
 
